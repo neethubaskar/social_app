@@ -13,6 +13,7 @@ It supports user registration (including Google OAuth), authentication with JWT,
 - Searchable Paginated User List
 - Friend Suggestions (Mocked)
 - Friend Requests (Send, Accept/Reject)
+- List All Received Requests
 - List Accepted Friends
 
 ---
@@ -87,5 +88,16 @@ python manage.py runserver
 | PATCH  | `/users/api/v1/profile/`      | Update user profile                      |
 | GET    |  `/users/api/v1/users/`       | List users with search option (?search=) |
 
+
+
+## 👥 Friend APIs
+
+| Method | Endpoint                                         | Description                              |
+|--------|--------------------------------------------------|------------------------------------------|
+| GET    | `/friends/api/v1/suggestions/`                   | Suggest 5 random users as friends        |
+| POST   | `/friends/api/v1/send-request/`                  | Send friend request to another user      |
+| GET    | `/friends/api/v1/list/`                          | List all friends                         |
+| PATCH  | `/friends/api/v1/request/pk(request id)/respond` | Accept or reject a friend request        |
+| GET    | `/friends/api/v1/friend-requests/`               | List all recieved requests               |
 
 
