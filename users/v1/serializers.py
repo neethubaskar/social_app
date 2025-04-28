@@ -1,4 +1,5 @@
 import re
+import requests
 from rest_framework import serializers
 from django.core.validators import validate_email
 from django.contrib.auth import get_user_model, authenticate
@@ -66,10 +67,10 @@ class GoogleAuthSerializer(serializers.Serializer):
 
     def validate(self, attrs):
         access_token = attrs.get("access_token")
-
         # Call Google UserInfo API
         user_info_response = requests.get(
-            'https://www.googleapis.com/oauth2/v3/userinfo',
+            'https://www.googleapis.com/oauth2/v2/userinfo',
+            # 'https://openidconnect.googleapis.com/v1/userinfo',
             headers={'Authorization': f'Bearer {access_token}'}
         )
 

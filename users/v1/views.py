@@ -5,7 +5,6 @@ from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView
 from rest_framework.filters import SearchFilter
 
-
 from users.v1.serializers import (
     RegisterSerializer, LoginSerializer, GoogleAuthSerializer, 
     UserProfileUpdateSerializer, UserListSerializer)
@@ -78,6 +77,7 @@ class GoogleAuthView(APIView):
     permission_classes = [AllowAny]
 
     def post(self, request):
+        
         serializer = GoogleAuthSerializer(data=request.data)
         if not serializer.is_valid():
             return api_response(
