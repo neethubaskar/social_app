@@ -83,7 +83,7 @@ python manage.py runserver
 |--------|-------------------------------|------------------------------------------|
 | POST   | `/users/api/v1/register/`     | Register with name, email, password      |
 | POST   | `/users/api/v1/login/`        | Login and get JWT token                  |
-| POST   | `/users/api/v1/google-login/` | Google OAuth2 login                      |
+| POST   | `/users/api/v1/google-auth/`  | Google OAuth2 login                      |
 | GET    | `/users/api/v1/profile/`      | Get current user profile                 |
 | PATCH  | `/users/api/v1/profile/`      | Update user profile                      |
 | GET    |  `/users/api/v1/users/`       | List users with search option (?search=) |
